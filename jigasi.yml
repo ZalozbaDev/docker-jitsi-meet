@@ -23,6 +23,7 @@ services:
             - AUTOSCALER_URL
             - BOSH_URL_PATTERN
             - ENABLE_AUTH
+            - ENABLE_VOSK
             - ENABLE_GUESTS
             - XMPP_AUTH_DOMAIN
             - XMPP_GUEST_DOMAIN
@@ -68,6 +69,7 @@ services:
             - SENTRY_RELEASE
             - TZ
             - USE_TRANSLATOR_IN_CONFERENCE
+            - VOSK_SERVER
         depends_on:
             - prosody
         networks:
