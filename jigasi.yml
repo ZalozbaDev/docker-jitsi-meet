@@ -23,6 +23,7 @@ services:
             - AUTOSCALER_URL
             - BOSH_URL_PATTERN
             - ENABLE_AUTH
+            - ENABLE_GCLOUD_TRANSCRIPTION
             - ENABLE_VOSK
             - ENABLE_GUESTS
             - XMPP_AUTH_DOMAIN
