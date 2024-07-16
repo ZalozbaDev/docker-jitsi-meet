@@ -3,7 +3,8 @@ version: '3.5'
 services:
     # SIP gateway (audio)
     jigasi:
-        image: jitsi/jigasi:${JITSI_IMAGE_VERSION:-unstable}
+        #image: jitsi/jigasi:${JITSI_IMAGE_VERSION:-unstable}
+        build: ./jigasi
         restart: ${RESTART_POLICY:-unless-stopped}
         ports:
             - '${JIGASI_PORT_MIN:-20000}-${JIGASI_PORT_MAX:-20050}:${JIGASI_PORT_MIN:-20000}-${JIGASI_PORT_MAX:-20050}/udp'
@@ -23,8 +24,6 @@ services:
             - AUTOSCALER_URL
             - BOSH_URL_PATTERN
             - ENABLE_AUTH
-            - ENABLE_GCLOUD_TRANSCRIPTION
-            - ENABLE_VOSK_TRANSCRIPTION
             - ENABLE_GUESTS
             - XMPP_AUTH_DOMAIN
             - XMPP_GUEST_DOMAIN
@@ -55,6 +54,7 @@ services:
             - JIGASI_SIP_KEEP_ALIVE_METHOD
             - JIGASI_ENABLE_SDES_SRTP
             - ENABLE_TRANSCRIPTIONS
+            - JIGASI_TRANSCRIBER_BACKEND
             - JIGASI_TRANSCRIBER_ADVERTISE_URL
             - JIGASI_TRANSCRIBER_RECORD_AUDIO
             - JIGASI_TRANSCRIBER_SEND_TXT

@@ -1,5 +1,5 @@
 #!/usr/bin/with-contenv bash
-if [[ -f /config/key.json ]]; then
+if [[ -z $JIGASI_TRANSCRIBER_BACKEND || $JIGASI_TRANSCRIBER_BACKEND == "google" ]]; then
     export GOOGLE_APPLICATION_CREDENTIALS=/config/key.json
 fi
 
