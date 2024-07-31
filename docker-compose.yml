@@ -202,6 +202,7 @@ services:
             - ENABLE_LOBBY
             - ENABLE_RECORDING
             - ENABLE_S2S
+            - ENABLE_TRANSCRIPTIONS
             - ENABLE_VISITORS
             - ENABLE_XMPP_WEBSOCKET
             - ENABLE_JAAS_COMPONENTS
